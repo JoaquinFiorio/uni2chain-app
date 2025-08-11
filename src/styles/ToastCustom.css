@@ -1,0 +1,132 @@
+/* Estilos personalizados para los toast de react-toastify */
+/* Estos estilos sobrescribirán los estilos base de react-toastify */
+
+/* Estilo base para todos los toasts */
+.Toastify__toast {
+  background-color: #002d32 !important;
+  border: 1px solid #01B576 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(10px) !important;
+  color: white !important;
+  font-family: inherit !important;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Clases específicas para diferentes tipos de toasts */
+.custom-toast-info {
+  background-color: #005256 !important;
+  border-color: #01B576 !important;
+}
+
+.custom-toast-success {
+  background-color: rgba(1, 181, 118, 0.9) !important;
+  border-color: #c9fbd6 !important;
+}
+
+.custom-toast-warning {
+  background-color: rgba(1, 181, 118, 0.9) !important;
+  border-color: #ffcc80 !important;
+}
+
+.custom-toast-error {
+  background-color: rgba(255, 76, 76, 0.9) !important;
+  border-color: #ffb0b0 !important;
+}
+
+/* Cambiar color para toast de tipo información */
+.Toastify__toast--info {
+  background-color: #005256 !important;
+  border-color: #01B576 !important;
+}
+
+/* Cambiar color para toast de tipo éxito */
+.Toastify__toast--success {
+  background-color: rgba(1, 181, 118, 0.9) !important;
+  border-color: #c9fbd6 !important;
+}
+
+/* Cambiar color para toast de tipo advertencia */
+.Toastify__toast--warning {
+  background-color: rgba(1, 181, 118, 0.9) !important;
+  border-color: #ffcc80 !important;
+}
+
+/* Cambiar color para toast de tipo error */
+.Toastify__toast--error {
+  background-color: rgba(255, 76, 76, 0.9) !important;
+  border-color: #ffb0b0 !important;
+}
+
+/* Estilo para la barra de progreso */
+.Toastify__progress-bar {
+  background: linear-gradient(to right, #01B576, #c9fbd6) !important;
+  height: 3px !important;
+}
+
+/* Animaciones más suaves */
+@keyframes Toastify__bounceInDown {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 5px, 0);
+  }
+  75% {
+    transform: translate3d(0, -2px, 0);
+  }
+  90% {
+    transform: translate3d(0, 1px, 0);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes Toastify__bounceOutUp {
+  20% {
+    transform: translate3d(0, -5px, 0);
+  }
+  40%, 45% {
+    opacity: 1;
+    transform: translate3d(0, 10px, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+  }
+}
+
+.Toastify__bounce-enter--top-center {
+  animation-name: Toastify__bounceInDown !important;
+  animation-duration: 0.6s !important;
+}
+
+.Toastify__bounce-exit--top-center {
+  animation-name: Toastify__bounceOutUp !important;
+  animation-duration: 0.5s !important;
+}
+
+/* Estilo para el botón de cerrar */
+.Toastify__close-button {
+  color: #c9fbd6 !important;
+  opacity: 0.7 !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.Toastify__close-button:hover {
+  opacity: 1 !important;
+}
+
+/* Estilo para el contenido del toast */
+.Toastify__toast-body {
+  font-size: 0.95rem !important;
+  padding: 8px 10px !important;
+  line-height: 1.5 !important;
+}

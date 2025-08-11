@@ -1,0 +1,106 @@
+.infoCard {
+  width: 200px;
+  max-width: 200px;
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  background-color: rgba(0, 82, 86, 0.7);
+  border: 1px solid rgba(1, 181, 118, 0.5);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 5px 10px 5px;
+  gap: 6px;
+  margin: 10px 0;
+  box-shadow: 0px 0px 15px rgba(0, 255, 136, 0.15);
+  position: relative;
+  z-index: 10;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 6px;
+}
+
+.iconContainer {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-bottom:-5px;
+}
+
+.icon {
+  position: absolute;
+  height: 70%;
+  width: 70%;
+  top: 15%;
+  right: 15%;
+
+  left: 15%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  
+}
+
+.title {
+  position: relative;
+  line-height: 0;
+  font-size: 15px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0px 0px 3px rgba(0, 255, 136, 0.6);
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.description {
+  align-self: stretch;
+  text-align: center;
+  position: relative;
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Estilos para los conectores de nodos */
+.nodeConnector {
+  position: absolute;
+  width: 160px; /* Aumentado para dar más espacio al nodo */
+  height: 60px; /* Aumentado para dar más espacio al nodo */
+  left: -160px; /* Ajustado para que coincida con el nuevo ancho */
+  pointer-events: none;
+  z-index: 11;
+}
+
+.nodeImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0px 0px 3px rgba(0, 255, 136, 0.6));
+}
+
+/* Posiciones específicas para los nodos */
+.position-top .nodeConnector {
+  top: 15px;
+  bottom: auto;
+}
+
+.position-center .nodeConnector {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.position-bottom .nodeConnector {
+  top: auto;
+  bottom: 15px;
+}

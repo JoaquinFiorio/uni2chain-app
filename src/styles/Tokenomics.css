@@ -1,0 +1,87 @@
+.tokenomics-container {
+  color: white;
+  font-family: 'Arial', sans-serif;
+  min-height: 73vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  color: transparent;
+  -webkit-text-stroke: 1px #01B576;
+  margin: 0;
+}
+
+.polar-area-chart {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.polar-area-image {
+  position: absolute;
+  top: 37.5%;
+  left: 44%;
+  width: 150px;
+}
+
+.polar-area-image-2 {
+  position: absolute;
+  top: 40%;
+  left: 46.6%;
+  width: 80px;
+}
+
+.tokenomics-item {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.infoCardTokenomics {
+  width: 200px;
+  max-width: 200px;
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  background-color: rgba(0, 82, 86, 0.7);
+  border: 1px solid rgba(1, 181, 118, 0.5);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px 5px;
+  margin: 10px 0;
+  box-shadow: 0px 0px 15px rgba(0, 255, 136, 0.15);
+  position: relative;
+  z-index: 10;
+}
+
+.left {
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+
+.right {
+  right: 15%;
+  transform: translate(-50%, -50%);
+}
+
+.percentage {
+  font-size: 30px;
+  color: #01B576;
+  text-align: center;
+  margin: 0;
+}
+

@@ -1,0 +1,151 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContainer {
+  background-color: #001B26;
+  border-radius: 10px;
+  border: 1px solid #01B576;
+  width: 90%;
+  max-width: 500px;
+  padding: 24px;
+  position: relative;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.closeButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.closeButton:hover {
+  color: #01B576;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.walletIcon {
+  color: #01B576;
+  font-size: 24px;
+}
+
+.modalHeader h2 {
+  color: #fff;
+  margin: 0;
+  font-size: 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.description {
+  color: #ccc;
+  font-size: 14px;
+  margin: 0 0 8px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputGroup label {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input {
+  padding: 12px 16px;
+  border-radius: 5px;
+  border: 1px solid #004956;
+  background-color: #00283A;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input:focus {
+  border-color: #01B576;
+}
+
+.submitButton {
+  margin-top: 8px;
+  padding: 12px;
+  border-radius: 5px;
+  background-color: #01B576;
+  color: white;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submitButton:hover {
+  background-color: #00A067;
+}
+
+.submitButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.errorMessage {
+  background-color: rgba(220, 38, 38, 0.2);
+  color: #ef4444;
+  padding: 10px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  border: 1px solid #ef4444;
+}
+
+.successMessage {
+  background-color: rgba(1, 181, 118, 0.2);
+  color: #01B576;
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 500;
+  border: 1px solid #01B576;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

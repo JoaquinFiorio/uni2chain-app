@@ -1,0 +1,704 @@
+.fullWidthLayout {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 1200px; /* Unifica el ancho máximo */
+  margin: 0 auto; /* Centra el contenedor */
+  position: relative;
+  box-sizing: border-box;
+}
+
+.title {
+    text-align: center;
+    font-size: 3rem;
+    color: transparent;
+    -webkit-text-stroke: 1px #01B576;
+    margin: 0;
+}
+
+/* Eliminadas clases no utilizadas: infoContainer, nodesList, controlsContainer, buttonContainer, actionButton, updateButton, pageTitle, nodos, nodosWrapper, frameParent, all, allWrapper, search, fiRrSearchIcon, searchParent, frameGroup, fiRrAngleSmallDownIcon, tipoParent, rangoParent, frameParent, frameChild, nodosInner, obsidianCore, nodoPerativoY, eth, ethWrapper, obsidianCoreParent */
+
+.nodesPageContainer {
+  width: 100%;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 69vh; /* Asegura altura mínima visible para el contenido principal */
+}
+
+.nodesHeader {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.nodesTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.filterBarContainer {
+  margin-bottom: 5px;
+}
+
+.filterBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.filterLeftSection {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.allFilter {
+  background-color: #01B576;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  color: white;
+}
+
+.searchBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchInput {
+  background-color: #005256;
+  border: 1px solid #01B576;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 100px;
+  padding-right: 30px;
+  width: 250px;
+}
+
+.searchInput:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(1, 181, 118, 0.3);
+}
+
+.searchIcon {
+  position: absolute;
+  right: 10px;
+  color: #777;
+}
+
+.filterRightSection {
+  display: flex;
+  gap: 15px;
+}
+
+.dropdown {
+  background-color: #005256;
+  border: 1px solid #01B576;
+  padding: 8px 15px;
+  border-radius: 100px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-weight: 500;
+}
+
+.walletInfo {
+  background-color: #007950;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 6px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.statusMessage {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(1, 181, 118, 0.9);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para el modal de advertencia */
+.warningModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.warningModalContent {
+  background-color: #002d32;
+  border: 2px solid #ff6060;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.warningModalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #3a3a3a;
+}
+
+.warningModalHeader h3 {
+  margin: 0;
+  color: #ff6060;
+  font-size: 1.3rem;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.warningModalBody {
+  padding: 20px;
+  white-space: pre-line;
+}
+
+.warningModalBody p {
+  margin: 0 0 10px 0;
+  line-height: 1.5;
+}
+
+.connectWalletButton {
+  background-color: #01B576;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.connectWalletButton:hover {
+  background-color: #00935f;
+}
+
+.dropdownIcon {
+  font-size: 0.7rem;
+}
+
+.nodesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 10px;
+  max-height: 46.5vh;
+  margin-top: 20px;
+  overflow-y: auto;
+  max-width: 1250px; /* Unifica el ancho máximo */
+}
+
+/* Para hacer más responsivo el contenedor de nodos en tablets */
+@media screen and (max-width: 1024px) {
+  .nodesGrid {
+    max-height: 44vh;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+.nodeCard {
+  border-radius: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.nodeCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.nodeImageContainer {
+  position: relative;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nodeImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.nodeContent {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  position: relative;
+  border-radius: 7px;
+  border: 1.5px solid #c9fbd6;
+  margin: -20px;
+  width: 90%;
+  max-width: 270px;
+  transition: margin 0.3s ease;
+}
+
+.nodeContent.expanded {
+  margin-top: -60px;
+}
+
+.nodeName {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: left;
+  margin-inline: 0;
+  margin-block: 0;
+}
+
+.nodeDescription {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+  text-align: left;
+  margin-block: 0;
+}
+
+.nodeQuantity {
+  font-size: 0.8rem;
+  color: #fff;
+  text-align: left;
+  margin-block: 4px 8px;
+}
+
+.nodePriceContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+}
+
+.nodePrice {
+  font-size: 1rem;
+  color: #01B576;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dropdownArrow {
+  color: #01B576;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.nodeButtonsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+  width: 100%;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.nodeButtonsContainer.active {
+  opacity: 1;
+  max-height: 500px; /* Ajusta este valor según el contenido */
+}
+
+.nodeDropdownButton {
+  padding: 8px 15px;
+  border: none;
+  color: white;
+  font-size: 0.8rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 4px;
+  flex: 1;
+}
+
+.approveButton {
+  background-color: #222;
+  margin-bottom: 5px;
+}
+
+.acquireButton {
+  background-color: #01B576;
+}
+
+.paymentOptions {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.radioInput {
+  cursor: pointer;
+  accent-color: #01B576;
+}
+
+/* Eliminadas todas las variantes de color para los nodos que no estaban siendo utilizadas (nodeVariantblack, nodeVariantbrown, etc.) */
+
+/* Estilos para el botón de filtros móvil */
+.mobileFilterToggle {
+  display: none;
+  background-color: #01B576;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  margin: 10px auto 20px;
+  cursor: pointer;
+  font-weight: 500;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 90%;
+  max-width: 300px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.mobileFilterToggle:hover {
+  background-color: #009b64;
+}
+
+.mobileFilterToggle svg {
+  font-size: 18px;
+}
+
+/* Media queries para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .mobileFilterToggle {
+    display: flex;
+  }
+  
+  .filterBarContainer {
+    display: none;
+  }
+  
+  .filtersVisible {
+    display: block;
+  }
+  
+  .filterBar {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .filterLeftSection,
+  .filterRightSection {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .searchInput {
+    width: 100%;
+  }
+  
+  .dropdown {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .nodesGrid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    overflow: hidden;
+  }
+  
+  /* Ajustes adicionales para el responsive de los cards de nodos */
+  .nodeContent {
+    width: 95%;
+    max-width: none;
+    margin: -15px;
+  }
+  
+  .nodeContent.expanded {
+    margin-top: -50px;
+  }
+  
+  .nodeCard {
+    width: 100%;
+  }
+  
+  .nodeButtonsContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .paymentOptions {
+    margin-bottom: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .nodeDropdownButton {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  
+  .dropdownMenu {
+    width: 100%;
+    position: relative;
+    margin-top: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .dropdown {
+    padding: 10px 15px;
+  }
+  
+  .dropdownItem {
+    padding: 12px 15px;
+  }
+  
+  /* Cerrar los filtros al seleccionar un item en un dropdown */
+  .resetFiltersButton {
+    width: 100%;
+    margin-top: 15px;
+    background-color: #01B576;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .fullWidthLayout {
+    height: auto;
+  }
+  
+  .filterLeftSection {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .allFilter {
+    text-align: center;
+  }
+  
+  .filterRightSection {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .searchBox {
+    width: 100%;
+  }
+  
+  .nodesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .nodeContent {
+    padding: 12px;
+    margin: -10px;
+  }
+  
+  .nodeContent.expanded {
+    margin-top: -40px;
+  }
+  
+  .nodeName {
+    font-size: 0.9rem;
+  }
+  
+  .nodeDescription {
+    font-size: 0.8rem;
+  }
+  
+  .nodeQuantity, .nodePrice {
+    font-size: 0.8rem;
+  }
+}
+
+/* Filtros solo visibles en desktop */
+.desktopOnlyFilters {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .nodesTitle {
+    font-size: 1.4rem;
+    margin-bottom: 0.5em;
+  }
+  .desktopOnlyFilters {
+    display: none !important;
+  }
+  .nodesHeader {
+    margin-bottom: 0.5em;
+  }
+  .nodesPageContainer {
+    padding: 10px 2vw;
+  }
+  .nodesGrid {
+    margin-top: 10px;
+    gap: 12px;
+    padding: 2px;
+    max-height: 62vh;
+    overflow-y: auto;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Estilos para los dropdowns */
+.dropdown {
+  position: relative;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #00292c;
+  border: 1px solid #01B576;
+  border-radius: 8px;
+  margin-top: 5px;
+  z-index: 100;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.dropdownItem {
+  padding: 10px 15px;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+.dropdownItem:hover {
+  background-color: #005256;
+}
+
+.allFilter.active {
+  background-color: #00935f;
+}
+
+/* Estilos para mensaje de "no se encontraron nodos" */
+.noNodesMessage {
+  grid-column: 1 / -1;
+  padding: 30px;
+  text-align: center;
+  background-color: rgba(0, 82, 86, 0.3);
+  border: 1px solid #01B576;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 90%;
+}
+
+.noNodesMessage p {
+  color: white;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.resetFiltersButton {
+  background-color: #01B576;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.resetFiltersButton:hover {
+  background-color: #00935f;
+}
+
+/* CSS para el cartel SOLD OUT */
+.soldOutOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  color: #05ab81;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  z-index: 2;
+  border-radius: 1rem;
+  letter-spacing: 0.2em;
+  text-shadow: 0 2px 8px #000;
+}
+
+/* Estilos para botones habilitados y deshabilitados */
+.enabledButton {
+  opacity: 1;
+  cursor: pointer;
+  filter: none;
+}
+
+.disabledButton {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(0.7);
+  pointer-events: none;
+}
+
+.inventoryBadge {
+  display: inline-block;
+  background: #01B576;
+  color: #fff;
+  font-size: 0.85em;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 2px 8px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+

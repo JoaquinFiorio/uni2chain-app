@@ -1,0 +1,340 @@
+.frameChild {
+    width: 228px;
+    height: 72px;
+    object-fit: cover;
+    cursor: pointer;
+}
+.vectorIcon {
+    position: absolute;
+    height: 80%;
+    width: 95%;
+    top: 10%;
+    right: 2.5%;
+    bottom: 10%;
+    left: 2.5%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.twitter {
+    width: 32px;
+    position: relative;
+    border-radius: 6px;
+    height: 32px;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin-top: -3px;
+}
+.groupIcon {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: -0.06%;
+    bottom: 0%;
+    left: 0.06%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.vectorIcon1 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.instagram {
+    width: 24px;
+    position: relative;
+    height: 24px;
+}
+.vectorIcon2 {
+    position: absolute;
+    height: 95.42%;
+    width: 100%;
+    top: 2.24%;
+    right: 0%;
+    bottom: 2.34%;
+    left: 0%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+.linkedin {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.twitterParent {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.frameParent {
+    width: 95%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0px;
+
+
+}
+
+/* Nuevos estilos para el usuario */
+.rightSection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+}
+
+.userSection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.loginButton {
+    background-color: #01B576;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.loginButton:hover {
+    background-color: #00A067;
+}
+
+.userInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(1, 181, 118, 0.2);
+    border: 1px solid #01B576;
+    border-radius: 20px;
+    padding: 4px 10px 4px 4px;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #005256;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.username {
+    color: white;
+    font-size: 14px;
+}
+
+.logoutButton {
+    background: none;
+    border: none;
+    color: #01B576;
+    cursor: pointer;
+    padding: 0;
+    font-size: 12px;
+    text-decoration: underline;
+    margin-left: 5px;
+}
+
+/* Estilos para el botón de añadir wallet */
+.addWalletButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #005256;
+    color: white;
+    border: 1px solid #01B576;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+}
+
+.addWalletButton:hover {
+    background-color: #006670;
+}
+
+/* Nuevos estilos para los botones de wallet */
+.walletButtons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 10px;
+}
+
+.connectWalletButton, .disconnectWalletButton, .saveWalletButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 20px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.connectWalletButton {
+    background-color: #01B576;
+    color: white;
+    border: none;
+}
+
+.connectWalletButton:hover {
+    background-color: #00A067;
+}
+
+.disconnectWalletButton {
+    background-color: rgba(255, 75, 75, 0.1);
+    color: #ff4b4b;
+    border: 1px solid #ff4b4b;
+}
+
+.disconnectWalletButton:hover {
+    background-color: rgba(255, 75, 75, 0.2);
+}
+
+.saveWalletButton {
+    background-color: rgba(1, 181, 118, 0.1);
+    color: #01B576;
+    border: 1px solid #01B576;
+}
+
+.saveWalletButton:hover {
+    background-color: rgba(1, 181, 118, 0.2);
+}
+
+.walletIcon {
+    color: #01B576;
+    font-size: 16px;
+}
+
+/* Estilos para el botón del menú móvil */
+.mobileMenuButton {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #01B576;
+}
+
+/* Media queries para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .frameParent {
+        padding: 10px 16px;
+        position: relative;
+    }
+    
+    .mobileMenuButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .rightSection {
+        position: fixed;
+        top: 92px; /* Altura del navbar */
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        z-index: 1000;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .mobileMenuOpen {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .twitterParent {
+        margin-bottom: 20px;
+    }
+    
+    .userSection {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .walletButtons {
+        flex-direction: column;
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 100%;
+        align-items: center;
+    }
+    
+    .connectWalletButton, .disconnectWalletButton, .saveWalletButton {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    
+    .userInfo {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Media queries para dispositivos muy pequeños */
+@media screen and (max-width: 480px) {
+    .frameChild {
+        width: 180px;
+        height: 56px;
+    }
+    
+    .userInfo {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .avatar {
+        margin-bottom: 5px;
+    }
+    
+    .username {
+        margin-bottom: 5px;
+    }
+    
+    .logoutButton {
+        margin-left: 0;
+    }
+    
+    .connectWalletButton, .disconnectWalletButton, .saveWalletButton {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
+

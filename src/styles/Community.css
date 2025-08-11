@@ -1,0 +1,224 @@
+.container {
+    overflow-y: scroll;
+    height: 58vh;
+    padding: 30px 0px;
+}
+
+.container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: linear-gradient(to top, green, transparent);
+  border-radius: 4px;
+}
+
+.community-container {
+    color: white;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.title {
+    text-align: center;
+    font-size: 3rem;
+    color: transparent;
+    -webkit-text-stroke: 1px #01B576;
+    margin: 0;
+}
+
+.community-description {
+    flex: 1 1 40%;
+    max-width: 500px;
+    padding-right: 40px;
+}
+
+.community-description h2 {
+    font-size: 2rem;
+    color: #42f57b;
+}
+
+.community-description p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ccc;
+}
+
+.community-grid {
+    flex: 1 1 50%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.community-card {
+    background: rgba(50, 168, 82, 0.1);
+    border: 1px solid rgba(50, 168, 82, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    color: #42f57b;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.community-card span {
+    display: block;
+    margin-top: 10px;
+    font-weight: normal;
+    font-size: 0.9rem;
+    color: #c7ffd8;
+}
+
+.community-card:hover {
+    background: rgba(50, 168, 82, 0.2);
+    transform: translateY(-5px);
+}
+
+.builder-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.builder-section {
+    background-color: #19372a;
+    border-radius: 20px;
+    padding: 40px;
+    margin: 20px;
+    border-bottom: 4px solid #42f57b;
+    color: white;
+}
+
+.section-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.builder-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.builder-image {
+    max-width: 250px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(66, 245, 123, 0.4);
+}
+
+.builder-text {
+    max-width: 600px;
+    margin-left: 40px;
+}
+
+.builder-text h2 {
+    font-size: 2.5rem;
+    color: #42f57b;
+    margin-bottom: 20px;
+}
+
+.builder-text p {
+    font-size: 1rem;
+    color: #c7ffd8;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.join-button {
+    background: transparent;
+    border: 1px solid #42f57b;
+    color: #42f57b;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.join-button:hover {
+    background-color: rgba(66, 245, 123, 0.1);
+}
+
+.latest-updates {
+    color: white;
+    padding: 2rem 1.5rem;
+    margin: 0 auto;
+    font-family: sans-serif;
+}
+
+.latest-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.latest-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #19372a;
+    padding-right: 1.5rem;
+    margin-top: 30px;
+    border-bottom: 4px solid #42f57b;
+    border-radius: 10px;
+}
+
+.latest-image {
+    width: 250px;
+    height: 160px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.latest-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 2.9rem 0px;
+}
+
+.latest-header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.latest-headline {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.latest-icon {
+    font-size: 1rem;
+    margin-top: 2px;
+}
+
+.latest-date {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.5rem;
+}

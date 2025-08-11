@@ -1,0 +1,222 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  max-width: 1200px; /* Unifica el ancho máximo */
+  margin: 0 auto; /* Centra el contenedor */
+  box-sizing: border-box;
+  padding-top: 0; /* Elimina el padding superior por defecto */
+
+}
+
+/* El contenido crece y permite que el footer se mantenga abajo */
+.contentContainer {
+  display: flex;
+  width: 100%;
+  min-height: 0;
+  height: 100%; 
+}
+
+.footerNavWrapper {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  z-index: 10;
+  background: transparent;
+}
+
+@media (max-width: 768px) {
+  .mainContainer {
+    height: 90vh; /* Permite que el contenedor se ajuste al contenido */
+    justify-content: flex-start;
+    position: relative;
+  }
+  .contentContainer {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    padding: 0;
+  }
+  .centerColumn {
+    order: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    position: relative;
+  }
+  .mobileTopBannerHome {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100vw;
+    max-width: 100vw;
+    margin: 0;
+    z-index: 100;
+    position: fixed;
+    top: 86px; /* Baja el banner para que tape el TopNavbar */
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.55);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    padding: 18px 0 10px 0;
+  }
+  .cubeContainer {
+    margin-top: 0;
+    z-index: 1;
+    width: 100%;
+  }
+  .mobileTopBannerHome .oMaiorMarketplace {
+    font-size: 2rem;
+    line-height: 1.1;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 0.2em;
+  }
+  .mobileTopBannerHome .oMaiorMarketplacesubtitle {
+    font-size: 1rem;
+    line-height: 1.1;
+    text-align: center;
+    color: #b6ffe0;
+  }
+}
+
+.mobileContentContainer {
+  flex-direction: column;
+}
+
+.desktopContentContainer {
+  flex-direction: row;
+}
+
+.leftColumn {
+  flex: 1;
+  max-width: 350px; /* Limita el ancho máximo de la columna izquierda */
+  min-width: 220px; /* Opcional: ancho mínimo para responsividad */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente el contenido */
+  align-items: center;     /* Centra horizontalmente el contenido */
+  padding: 10px;
+  position: relative;
+  z-index: 2; /* Aumentado para estar por encima del centro */
+}
+
+.centerColumn {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  overflow: visible; /* Esta propiedad es crucial para ver los nodos */
+  position: relative;
+  z-index: 0; /* Cambiado de 1 a 0 para que los laterales puedan estar por encima */
+}
+
+.rightColumn {
+  flex: 1;
+  max-width: 350px; /* Limita el ancho máximo de la columna derecha */
+  min-width: 220px; /* Opcional: ancho mínimo para responsividad */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente el contenido */
+  align-items: center;     /* Centra horizontalmente el contenido */
+  padding: 10px;
+  position: relative;
+  z-index: 2; /* Aumentado para estar por encima del centro */
+}
+
+.cubeContainer {
+  transform: scale(0.8);
+  transform-origin: center center;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 0; /* Asegurando que esté por debajo de todo */
+  overflow: visible;
+}
+
+.mobileCubeContainer {
+  transform: scale(0.70);
+  transform-origin: center center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileContentSection {
+  width: 100%;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+  padding-bottom: 20px;
+}
+
+.mobileCubeSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  position: relative;
+  padding: 10px 0;
+
+}
+
+.mobileTopBannerHome {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobileTopBannerHome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100vw;
+    max-width: 100vw;
+    margin: 0;
+    z-index: 100;
+    position: fixed;
+    top: 126px; /* Baja el banner para que tape el TopNavbar */
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.55);
+    /* Fondo semitransparente para asegurar contraste */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    padding: 18px 0 10px 0;
+  }
+  .cubeContainer {
+    margin-top: 0;
+    z-index: 1;
+    width: 100%;
+  }
+  .mainContainer {
+    padding-top: 0;
+  }
+  .mobileTopBannerHome .oMaiorMarketplace {
+    font-size: 2rem;
+    line-height: 1.1;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 0.2em;
+  }
+  .mobileTopBannerHome .oMaiorMarketplacesubtitle {
+    font-size: 1rem;
+    line-height: 1.1;
+    text-align: center;
+    color: #b6ffe0;
+  }
+}
