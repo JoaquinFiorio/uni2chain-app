@@ -6,30 +6,28 @@ import bubbleLampIcon from '../assets/images/navbar/Bubble Lamp.svg';
 //import usergroupPersonIcon from '../assets/images/navbar/Group-person.svg';
 //import briefcaseIcon from '../assets/images/navbar/Briefcase.svg';
 import processorIcon from '../assets/images/navbar/Processor.svg';
-import anchorNodesIcon from '../assets/images/navbar/anchornodes.svg';
+// import anchorNodesIcon from '../assets/images/navbar/anchornodes.svg';
 import homeIcon from '../assets/images/navbar/home.svg';
 //import raspberryPiZeroIcon from '../assets/images/navbar/raspberry.svg';
 import { useNavContext } from '../context/NavContext';
-
-// Define los elementos de navegación (7 elementos en total: 3 izquierda, 1 centro, 3 derecha)
-const navItems = [
-  { id: 0, icon: bubbleLampIcon, label: 'SOLUCIONES', path: '/soluciones' },
-  { id: 1, icon: homeIcon, label: 'COMUNIDAD', path: '/community' },
-  // { id: 1, icon: usergroupPersonIcon, label: 'USUARIOS', path: '/users' },
-  // { id: 2, icon: briefcaseIcon, label: 'MALETÍN', path: '/briefcase' },
-  { id: 2, icon: processorIcon, label: 'NODOS', path: '/nodes' },     // Elemento central por defecto
-  { id: 3, icon: anchorNodesIcon, label: 'ECOSISTEMA', path: '/anchor' },
-  { id: 4, icon: homeIcon, label: 'INICIO', path: '/' },
-  { id: 5, icon: processorIcon, label: 'TOKENOMICS', path: '/tokenomics' }, 
-  { id: 6, icon: processorIcon, label: 'SWAP', path: '/swap' },
-  // { id: 6, icon: raspberryPiZeroIcon, label: 'RASPI', path: '/raspi' },
-];
+import { useTranslation } from 'react-i18next';
 
 const Navbar: FunctionComponent = () => {
   // Use context instead of local state
   const { activeIndex, setActiveIndex, setTriggerCubeAnimation } = useNavContext();
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation();
+  
+  // Array de navegación usando traducciones
+  const navItems = [
+    { id: 0, icon: bubbleLampIcon, label: 'navbar.solutions', path: '/solutions' },
+    { id: 1, icon: homeIcon, label: 'navbar.community', path: '/community' },
+    { id: 2, icon: processorIcon, label: 'navbar.nodes', path: '/nodes' },
+    { id: 4, icon: homeIcon, label: 'navbar.home', path: '/' },
+    { id: 5, icon: processorIcon, label: 'navbar.tokenomics', path: '/tokenomics' },
+    { id: 6, icon: processorIcon, label: 'navbar.swap', path: '/swap' },
+  ];
   
   // Estado para almacenar los elementos ordenados
   const [orderedItems, setOrderedItems] = useState(navItems);
@@ -173,7 +171,7 @@ const Navbar: FunctionComponent = () => {
                 onDragStart={(e) => e.preventDefault()}
               />
               {isCenter && item.label && (
-                <b className={styles.soluciones}>{item.label}</b>
+                <b className={styles.soluciones}>{t(item.label)}</b>
               )}
             </motion.div>
           );

@@ -28,13 +28,13 @@ function App() {
                 <Route path="/nodes" element={<NodesPage />} />
                 <Route path="/tokenomics" element={<Tokenomics />} />
                 <Route path="/swap" element={<Swap />} />
-                <Route path="/soluciones" element={<Soluciones />} />
+                <Route path="/solutions" element={<Soluciones />} />
                 <Route path="/login" element={<Login />} />
                 {/* Rutas para páginas que aún no están implementadas */}
                 <Route path="/community" element={<Community />} />
                 <Route path="/users" element={<ComingSoon />} />
                 <Route path="/briefcase" element={<ComingSoon />} />
-                <Route path="/anchor" element={<ComingSoon />} />
+                {/* <Route path="/anchor" element={<ComingSoon />} /> */}
                 <Route path="/raspi" element={<ComingSoon />} />
                 <Route path="/register" element={<ComingSoon />} />
                 <Route path="/reset-password" element={<ComingSoon />} />

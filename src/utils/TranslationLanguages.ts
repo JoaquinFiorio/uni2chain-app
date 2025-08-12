@@ -118,6 +118,14 @@ export const TranslationLanguages = {
             balance: "Balance",
             willReceive: "Will Receive",
             swap: "Swap",
+            navbar: {
+                solutions: "SOLUTIONS",
+                community: "COMMUNITY",
+                nodes: "NODES",
+                home: "HOME",
+                tokenomics: "TOKENOMICS",
+                swap: "SWAP"
+            }
         }
     },
     es: {
@@ -228,6 +236,14 @@ export const TranslationLanguages = {
             balance: "Balance",
             willReceive: "Recibirás",
             swap: "Intercambiar",
+            navbar: {
+                solutions: "SOLUCIONES",
+                community: "COMUNIDAD",
+                nodes: "NODOS",
+                home: "INICIO",
+                tokenomics: "TOKENOMICS",
+                swap: "SWAP"
+            }
         }
     }
 };
